@@ -1,4 +1,5 @@
-class Person:  #Exercise 1
+from abc import ABC, abstractmethod
+class Person(ABC):  #Exercise 1
     def __init__(self, name, age):
         self.name = name
         self.__age = age  
@@ -10,10 +11,14 @@ class Person:  #Exercise 1
     def set_age(self, new_age):
         self.__age = new_age
 
+    @abstractmethod
+    def role(self):
+        pass
+
 #Exercise 2
-person1 = Person("OB", "15")
-print(f"Name: {person1.name}")       
-print(f"Age: {person1.get_age()}\n")  # so that it cannot be accessed by the public, as well as being more secure
+# person1 = Person("OB", "15")
+# print(f"Name: {person1.name}")       
+# print(f"Age: {person1.get_age()}\n")  # so that it cannot be accessed by the public, as well as being more secure
 
 #Exercise 3
 class Student(Person):
