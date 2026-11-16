@@ -20,6 +20,9 @@ class Student(Person):
     def study(self):
         print(f"{self.name} is studying.\n")
 
+    def role(self):
+            return f"{self.name} is a student who learns in class."
+
 
 student1 = Student("Rocco", 14)
 
@@ -34,8 +37,22 @@ class Teacher(Person):
     def teach(self):
         print(f"{self.name} is teaching\n")
 
+    def role(self):
+            return f"{self.name} is a teacher who leads the class."
+
 teacher1 = Teacher("Mona", 30)
 print(f"Name: {teacher1.name}")
 print(f"Age: {teacher1.get_age()}")
 
 teacher1.teach()
+
+#Exercise 5 (new code inserted in previous code)
+print(student1.role())  
+print(teacher1.role())  
+
+
+print("\n--- Comparing Roles ---")
+people = [student1, teacher1]
+
+for person in people:
+    print(f"Name: {person.name} | Age: {person.get_age()} | Role: {person.role()}")
