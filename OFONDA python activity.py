@@ -1,4 +1,4 @@
-class Person:
+class Person:  #Exercise 1
     def __init__(self, name, age):
         self.name = name
         self.__age = age  
@@ -10,19 +10,32 @@ class Person:
     def set_age(self, new_age):
         self.__age = new_age
 
-person1 = Person("Rocco", "14")
-# print(person1.name)       
-# print(person1.get_age())  # so that it cannot be accessed by the public, as well as being more secure
+#Exercise 2
+person1 = Person("OB", "15")
+print(f"Name: {person1.name}")       
+print(f"Age: {person1.get_age()}\n")  # so that it cannot be accessed by the public, as well as being more secure
 
+#Exercise 3
 class Student(Person):
     def study(self):
-        print(f"{self.name} is studying.")
+        print(f"{self.name} is studying.\n")
 
 
 student1 = Student("Rocco", 14)
 
 
-print(student1.name)     
-print(student1.get_age())  
+print(f"Name: {student1.name}")     
+print(f"Age: {student1.get_age()}")  
 
 student1.study()           
+
+#Exercise 4
+class Teacher(Person):
+    def teach(self):
+        print(f"{self.name} is teaching\n")
+
+teacher1 = Teacher("Mona", 30)
+print(f"Name: {teacher1.name}")
+print(f"Age: {teacher1.get_age()}")
+
+teacher1.teach()
